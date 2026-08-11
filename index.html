@@ -25,6 +25,8 @@
 <link rel="stylesheet" as="style" crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
+<script>document.documentElement.className += " js";</script>
+
 <style>
 /* ============================================================
    Tokens
@@ -355,9 +357,10 @@ footer{
 /* ============================================================
    Reveal on scroll
    ============================================================ */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-.rv.in{opacity:1;transform:none;}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;}}
+/* hidden only when JS is present — without JS everything stays visible */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.js .rv.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;}}
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;}
 </style>
