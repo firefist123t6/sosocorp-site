@@ -12,9 +12,17 @@
 git add -A && git commit -m "내용 수정" && git push
 ```
 
-## 채워야 할 곳
+## 확정된 회사 정보
 
-`index.html` 안에서 `TODO(` 로 검색하면 실제 회사 정보로 교체해야 하는 위치가 전부 나옵니다.
+- 상호: 주식회사 소소컴퍼니 / SOSO CORP.
+- 사업자등록번호: 135-86-55936
+- 주소: 서울시 서초구 사임당로8길 13, 4층 402호 엠432호
+- 이메일: contact@sosocorp.io
+- 설립: 2023년
+
+## 아직 임시 문구인 곳
+
+`index.html` 안에서 `TODO(` 로 검색하면 위치가 전부 나옵니다.
 
 ```bash
 grep -n "TODO(" index.html
@@ -22,18 +30,16 @@ grep -n "TODO(" index.html
 
 - 히어로 슬로건 / 설명 문구
 - 회사 소개 2문단
-- 지표(설립연도·구성원 수·프로젝트 수)
-- 사업영역 카드 3개
-- 연혁
-- 상호 / 대표자 / 사업자등록번호 / 주소 / 이메일 / 전화
+- 사업영역 카드 3개 (제품 개발 / 데이터·자동화 / 컨설팅 — 개수 조정 가능)
+- `<meta name="description">` 및 og 설명
 
 ## 도메인
 
 - 배포: GitHub Pages
-- 커스텀 도메인: `www.sosocorp.io` (`CNAME` 파일로 지정)
+- 커스텀 도메인: `www.sosocorp.io` (`CNAME` 파일로 지정, HTTPS 강제 적용됨)
 - DNS: 가비아
 
-가비아 DNS 레코드:
+가비아 DNS 레코드 (설정 완료):
 
 | 타입  | 호스트 | 값 |
 |-------|--------|-----|
@@ -41,7 +47,9 @@ grep -n "TODO(" index.html
 | A     | @      | 185.199.109.153 |
 | A     | @      | 185.199.110.153 |
 | A     | @      | 185.199.111.153 |
-| CNAME | www    | `<GitHub 사용자명>.github.io.` |
+| CNAME | www    | `firefist123t6.github.io.` |
+
+apex(`sosocorp.io`)는 GitHub이 받아서 `www`로 301 리다이렉트합니다.
 
 ## 디자인 토큰
 
